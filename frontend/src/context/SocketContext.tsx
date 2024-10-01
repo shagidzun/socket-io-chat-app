@@ -20,7 +20,7 @@ export const SocketContextProvider = ({ children }: { children: ReactNode }) => 
 
 	useEffect(() => {
 		if (authContext && authContext.authUserMemoized) {
-			const socketio = io('http://localhost:3000', {
+			const socketio = io('https://socket-io-chat-app-frer.onrender.com/', {
 				query: {
 					userId: authContext.authUserMemoized._id,
 				},

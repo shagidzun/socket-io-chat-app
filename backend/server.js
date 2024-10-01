@@ -5,7 +5,6 @@ import connectToMongoDB from './db/connectToMongoDB.js';
 import messagesRoutes from './routes/messages.routes.js';
 import cookieParser from 'cookie-parser';
 import userRoutes from './routes/user.routes.js';
-import cors from 'cors';
 import { app, server } from './socket/socket.js';
 import path from 'path';
 
@@ -14,7 +13,7 @@ const __dirname = path.resolve();
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: ['http://localhost:5173'], credentials: true, methods: ['GET', 'POST', 'PUT', 'DELETE'] }));
+//app.use(cors({ origin: ['http://localhost:5173'], credentials: true, methods: ['GET', 'POST', 'PUT', 'DELETE'] }));
 
 app.use('/api/auth', appRoutes);
 app.use('/api/messages', messagesRoutes);
