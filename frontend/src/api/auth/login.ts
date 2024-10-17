@@ -3,6 +3,8 @@ import { axiosApi } from '../../utils/axios.api.ts';
 import { apiRoutes } from '../../routes/api.routes.ts';
 import { ILoginInput } from '../../pages/login/Login.tsx';
 import { useAuthContext } from '../../context/AuthContext.tsx';
+import toast from 'react-hot-toast';
+import { AxiosError } from 'axios';
 
 export const useLogin = () => {
 	const authContext = useAuthContext();
@@ -13,7 +15,8 @@ export const useLogin = () => {
 				localStorage.setItem('authUser', JSON.stringify(userData));
 				authContext?.setAuthUser(userData);
 			} catch (err) {
-				console.log(err);
+				const error = err as AxiosError<{ error: string }>;
+				toast.error(error?.response?.data.error ?? 'Failed to login');
 			}
 		},
 	});
