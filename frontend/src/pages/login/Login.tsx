@@ -41,7 +41,7 @@ export const Login = () => {
 						</label>
 						<input
 							{...register('password')}
-							type="text"
+							type="password"
 							placeholder="Enter password"
 							className="input input-bordered h-10 w-full"
 						/>

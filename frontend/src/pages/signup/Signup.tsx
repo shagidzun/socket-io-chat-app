@@ -55,7 +55,7 @@ export const Signup = () => {
 						</label>
 						<input
 							{...register('password', { required: true })}
-							type="text"
+							type="password"
 							placeholder="Enter password"
 							className="input input-bordered h-10 w-full"
 						/>
@@ -67,7 +67,7 @@ export const Signup = () => {
 						</label>
 						<input
 							{...register('confirmPassword', { required: true })}
-							type="text"
+							type="password"
 							placeholder="Confirm Password"
 							className="input input-bordered h-10 w-full"
 						/>
