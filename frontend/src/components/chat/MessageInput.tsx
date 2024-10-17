@@ -6,11 +6,18 @@ interface IMessageInput {
 
 export const MessageInput = forwardRef(({ handleClick }: IMessageInput, ref: ForwardedRef<HTMLInputElement>) => {
 	return (
-		<div className="mx-auto flex h-12 w-11/12 max-w-xs">
-			<input ref={ref} type="text" placeholder="Type here" className="input input-bordered w-full text-black" />
-			<button onClick={handleClick} className="btn">
-				Send
-			</button>
-		</div>
+		<form
+			onSubmit={(e) => {
+				e.preventDefault();
+				handleClick();
+			}}
+		>
+			<div className="mx-auto flex h-12 w-11/12 max-w-xs">
+				<input ref={ref} type="text" placeholder="Type here" className="input input-bordered w-full text-black" />
+				<button type="submit" className="btn">
+					Send
+				</button>
+			</div>
+		</form>
 	);
 });
