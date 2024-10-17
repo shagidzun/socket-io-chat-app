@@ -4,6 +4,7 @@ import { useAuthContext } from '../../context/AuthContext.tsx';
 import { useConversation } from '../../store/useConversation.ts';
 import { useListenMessages } from '../../../hooks/useListenMessages.ts';
 import { useEffect, useRef } from 'react';
+import { getTime } from '../../utils/getTime.ts';
 
 interface ChatMessagesProps {
 	messages: IMessage[];
@@ -35,7 +36,7 @@ export const ChatMessages = ({ messages }: ChatMessagesProps) => {
 						senderName={senderName ?? ''}
 						message={message}
 						img={profilePic ?? ''}
-						time={createdAt}
+						time={getTime(createdAt)}
 						ref={isLastMessage ? lastMessageRef : undefined}
 					/>
 				);
