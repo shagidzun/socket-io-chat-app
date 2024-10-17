@@ -14,8 +14,6 @@ export const Chat = () => {
 	const { mutate: sendMessage } = useSendMessage();
 	const messageInputRef = useRef<HTMLInputElement>(null);
 
-	console.log(data);
-
 	const handleSendMessage = () => {
 		if (messageInputRef.current?.value) {
 			sendMessage(messageInputRef.current.value);
