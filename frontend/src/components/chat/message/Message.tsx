@@ -18,10 +18,10 @@ export const Message = forwardRef<HTMLDivElement, MessageProps>(
 					</div>
 				</div>
 				<div className="chat-header">
-					{senderName}
+					<span className="mr-1">{senderName}</span>
 					<time className="text-xs opacity-50">{time}</time>
 				</div>
-				<div className={`chat-bubble ${isTheUser ? 'bg-blue-500' : ''}`}>{message}</div>
+				<div className={`chat-bubble break-words ${isTheUser ? 'bg-blue-500' : ''}`}>{message}</div>
 				{/*<div className="chat-footer opacity-50">Delivered</div>*/}
 			</div>
 		);
